@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<meta http-equiv="pragma" content="no-cache">
+    <meta name="format-detection" content="telephone=no, email=no, adress=no">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script type="text/javascript" lang="javascript">
+      (function fit (global) {
+        var window = global || this,
+          width = 750,
+          docEl = window.document.documentElement,
+          resizeEvt = 'resize',
+          resizeCall = (function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) {
+              docEl.style.fontSize = 100 + 'px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / parseInt(width)) + 'px';
+            }
+            return resizeCall;
+          })();
+        var dpr = window.devicePixelRatio || 1;
+        dpr = dpr >= 3 ? 3 : dpr >= 2 ? 2 : 1;
+        docEl.setAttribute('data-dpr', dpr);
+        window.addEventListener && window.addEventListener(resizeEvt, resizeCall, false);
+      })(this);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
