@@ -1,7 +1,8 @@
 {
-  "name": "vue-cli3-mutiple-pages",
+  "name": "vue-cli3_multiples",
   "version": "0.1.0",
   "private": true,
+  "author": "Frank",
   "scripts": {
     "dev": "vue-cli-service serve",
     "test": "vue-cli-service serve --mode test",
