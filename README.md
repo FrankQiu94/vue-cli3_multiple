@@ -1,12 +1,14 @@
 # 基于vue-cli3脚手架搭建多页面应用
 ## 初始化
 1. 安装yarn
->  **npm install -g yarn**  或  **brew install yarn**
+	>  **npm install -g yarn**  或  **brew install yarn**
 
 2. clone代码  
 ```bash
 git clone https://github.com/FrankQiu94/vue-cli3_multiple.git
+
 cd vue-cli3_multiple
+
 yarn install
 ```  
   

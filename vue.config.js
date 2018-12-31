@@ -103,7 +103,7 @@ module.exports = {
   },
   devServer: {
     open: true,
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 8181,
     https: false,
     hotOnly: false,
