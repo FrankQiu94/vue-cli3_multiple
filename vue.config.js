@@ -36,6 +36,10 @@ const getPages = () => {
 
 const pages = getPages()
 module.exports = {
+  // 可配置baseUrl，更改生产环境下静态资源路径
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/activity/'
+    : '/',
   // 生产环境绝对路径，开发环境拼接后绝对路径
   assetsDir: process.env.NODE_ENV === 'production'
     ? '/'
@@ -91,12 +95,9 @@ module.exports = {
       \n=========================================\n
     `)
     if (process.env.NODE_ENV === 'production') {
-      config.output = {
-        path: resolve('./dist'),
-        filename: '[name]/js/app.[contenthash:8].js',
-        publicPath: '/',
-        chunkFilename: '[name]/js/app.[contenthash:8].js'
-      }
+      // 修改js输出路径，优化目录格式
+      config.output.filename = '[name]/js/app.[contenthash:8].js'
+      config.output.chunkFilename = '[name]/js/app.[contenthash:8].js'
     } else {
 
     }
