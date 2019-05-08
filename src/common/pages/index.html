@@ -2,13 +2,23 @@
 <html lang="zh-cn">
   <head>
     <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
 		<meta http-equiv="pragma" content="no-cache">
     <meta name="format-detection" content="telephone=no, email=no, adress=no">
 		<meta http-equiv="cache-control" content="no-cache">
 		<meta http-equiv="expires" content="0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="true">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="text/javascript" lang="javascript">
       (function fit (global) {
@@ -21,7 +31,14 @@
             if (!clientWidth) {
               docEl.style.fontSize = 100 + 'px';
             } else {
-              docEl.style.fontSize = 100 * (clientWidth / parseInt(width)) + 'px';
+              if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+                docEl.style.fontSize = 100 * (clientWidth / parseInt(width)) + 'px';
+              } else {
+                var percentage = clientWidth / 1920;
+                var fsize = 100 * percentage;
+                fsize = fsize < 25 ? 25 + 'px' : fsize > 100 ? 100 + 'px' : fsize + 'px';
+                docEl.style.fontSize = fsize;
+              }
             }
             return resizeCall;
           })();
@@ -34,6 +51,5 @@
   </head>
   <body>
     <div id="app"></div>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </body>
 </html>
