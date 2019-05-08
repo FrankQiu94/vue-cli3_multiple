@@ -5,16 +5,57 @@
 ### 初始化  
 
 *建议使用yarn替代npm，常用的命令区别如下表：*   
-| 命令 | yarn | npm |  
-| :---: | --- | --- |  
-| 安装依赖 | npm install | yarn |  
-| --- | npm install --save [package] | yarn add [package]  |  
-| --- | npm install --save-dev [package] | yarn add [package] [--dev/-D] |  
-| --- | npm install --global [package] | yarn global add [package] |  
-| --- | npm install [package]@[version] | yarn add [package]@[version] |  
-| 卸载依赖 | npm uninstall --save [package] | yarn remove [package] |  
-| --- | npm uninstall --save-dev [package] | yarn remove [package] [--dev/-D] |  
-| 更新依赖 | rm -rf node_modules && npm install | yarn upgrade |  
+<table>
+    <thead>
+        <tr>
+            <th>命令</th>
+            <th>yarn</th>
+            <th>npm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>安装依赖</td>
+            <td>npm install</td>
+            <td>yarn</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>npm install --save [package]</td>
+            <td>yarn add [package]</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>npm install --save-dev [package]</td>
+            <td>yarn add [package] [--dev/-D]</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>npm install --global [package]</td>
+            <td>yarn global add [package]</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>npm install [package]@[version]</td>
+            <td>yarn add [package]@[version]</td>
+        </tr>
+        <tr>
+            <td>卸载依赖</td>
+            <td>npm uninstall --save [package]</td>
+            <td>yarn remove [package]</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>npm uninstall --save-dev [package]</td>
+            <td>yarn remove [package] [--dev/-D]</td>
+        </tr>
+        <tr>
+            <td>更新依赖</td>
+            <td>rm -rf node_modules && npm install</td>
+            <td>yarn upgrade</td>
+        </tr>
+    </tbody>
+</table>
 
 1. 安装yarn
 >  **npm install -g yarn**  或  **brew install yarn**  
